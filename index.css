@@ -1,0 +1,163 @@
+:root {
+  --bcg-color: #1d2b53;
+  --primary-color: #51829b;
+  --border-radius: 8px;
+  --secondary-color: #fff;
+  --border-color: #7fb7c9;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to right bottom,
+    #ce43be,
+    #ed468a,
+    #ed6463,
+    #db8451,
+    #c29e58,
+    #baa45c,
+    #b2a962,
+    #aaae69,
+    #b0a657,
+    #b79d46,
+    #bf9337,
+    #c8882a
+  );
+} */
+
+body {
+  width: 100%;
+  /* margin: auto; */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  background: linear-gradient(
+    315deg,
+    rgba(101, 0, 94, 1) 3%,
+    rgba(60, 132, 206, 1) 38%,
+    rgba(48, 238, 226, 1) 68%,
+    rgba(255, 25, 25, 1) 98%
+  );
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.box {
+  background-color: var(--primary-color);
+  padding: 30px;
+  width: 400px;
+  border-radius: var(--border-radius);
+}
+
+.qr-header h1 {
+  font-size: 26px;
+  text-align: center;
+  color: rgb(10, 52, 52);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.qr-header input {
+  width: 100%;
+  margin-block: 12px;
+}
+
+.qr-header input,
+select {
+  padding: 8px;
+  border-radius: var(--border-radius);
+  font-size: 18px;
+  outline: none;
+  border: 2px solid var(--border-color);
+}
+
+.qr-header label {
+  color: var(--secondary-color);
+  font-size: 20px;
+}
+
+.qr-header div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.qr-footer {
+  display: flex;
+  justify-content: space-around;
+}
+.qr-footer a {
+  background-color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 20px;
+  padding: 14px 36px;
+  margin-inline: 2px;
+  color: var(--primary-color);
+  font-weight: 600;
+  border-radius: var(--border-radius);
+}
+.qr-footer a:hover {
+  color: var(--bcg-color);
+  background-color: rgb(191, 232, 244);
+}
+.qr-body {
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.qr-body img {
+  max-width: 100%;
+  max-height: 100vh;
+  margin-block: 10px;
+  padding: 20px;
+  border: 0.5px solid var(--border-color);
+  border-radius: var(--border-radius);
+  opacity: 0; /* Initially hide the image */
+  animation: fadeIn 1s ease-in-out forwards; /* Apply the fade-in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .box {
+    width: 80%;
+  }
+  .qr-footer a {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
